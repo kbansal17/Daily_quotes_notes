@@ -60,7 +60,4 @@ This is a simple Flask web application that displays a new inspirational quote e
 4. Push to the branch (`git push origin feature-name`).
 5. Create a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
