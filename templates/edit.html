@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Note</title>
+  <style>
+    body {
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    textarea {
+      width: 300px;
+      height: 120px;
+      font-size: 16px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #2ecc71;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    a {
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>✏️ Edit Note</h2>
+  <form method="POST">
+    <textarea name="note">{{ note.text }}</textarea><br>
+    <button type="submit">💾 Update Note</button>
+  </form>
+  <a href="/notes">← Cancel</a>
+</body>
+</html>

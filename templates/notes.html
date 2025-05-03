@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Notes</title>
+  <style>
+    body {
+      background: linear-gradient(120deg, #f093fb, #f5576c);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .note-card {
+      background: white;
+      padding: 15px 20px;
+      margin: 10px;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+    .timestamp {
+      font-size: 0.8em;
+      color: gray;
+      margin-top: 5px;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 8px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    button.delete {
+      background: #e74c3c;
+    }
+    a {
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>📝 Your Notes</h2>
+  {% for note in notes %}
+    <div class="note-card">
+      <div>{{ note.text }}</div>
+      <div class="timestamp">📅 {{ note.timestamp }}</div>
+      <form method="POST" action="/delete/{{ loop.index0 }}" style="display:inline;">
+        <button type="submit" class="delete">🗑 Delete</button>
+      </form>
+      <form method="GET" action="/edit/{{ loop.index0 }}" style="display:inline;">
+        <button type="submit">✏️ Edit</button>
+      </form>
+    </div>
+  {% endfor %}
+  <a href="/">← Back to Home</a>
+</body>
+</html>
